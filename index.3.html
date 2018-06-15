@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>重力感应游戏</title>
+    <script src="js/index.js"></script>
+    <script src="js/jquery-1.4.4.min.js"></script>
+    <script src="js/orienter.js"></script>
+    <style>
+        .content {
+            width: 100%;
+            height: 100%;
+        }
+
+        .content img {
+            width: 100px
+                    }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+        <img src="img/3.jpg" class="img">
+    </div>
+    <script type="text/javascript">
+ var o = new Orienter(); o.onOrient = function (obj) { 
+     console.log(obj)
+     var a, b; 
+ a = obj.lon< 180 ? obj.lon : obj.lon - 360;
+ console.log(a) 
+ b= obj.lat;
+ a=a> 0 ? a > 90 ? 90 : a : a
+< -90 ? -90 : a; b=b> 0 ? b > 90 ? 90 : b : b
+    < -90 ? -90 : b; $( ".img").css( "-webkit-transform", "translate3d(" + a + "px," + b + "px,0)");
+        }; o.init();
+</script>
+</body>
+
+</html>

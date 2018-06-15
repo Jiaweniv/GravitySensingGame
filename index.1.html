@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>手机重力感应</title>
+<script src="js/index.js"></script>
+<script src="js/jquery-1.4.4.min.js"></script>
+<style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+        outline: none;
+        border: none;
+    }
+
+    #test {
+        width: 10rem;
+        height: 3rem;
+        line-height: 1rem;
+        font-size: .5rem;
+        text-align: center;
+        margin: 1rem 0 0 0;
+    }
+
+    #down,
+    #open,
+    #gets {
+        font-size: .5rem;
+        padding: .3rem;
+        border-radius: .2rem;
+        background: red;
+        color: white;
+        margin: 0 0 0 .49rem;
+    }
+</style>
+</head>
+
+<body>
+    <input type="button" id="gets" value="获取当前" />
+    <input type="button" id="down" value="结束监听" />
+    <input type="button" id="open" value="开始监听" />
+    <div id="test"></div>
+</body>
+
+</html>
+<script type="text/javascript">
+    /**
+     * 页面布局rem重置语句
+     */
+    $('html').css("font-size", $(window).width()/10);
+    
+    /**
+     * 手机端页面初始化事件, 所有操作均要写在在该事件内
+     * 否则可能会出现错误: plus is not defind
+     */
+    document.addEventListener('plusready', function(){
+        function gets(){
+            /**
+             * 获取手机当前加速度 plus.Accelerometer.getCurrentAcceleration(success(){}, error(){});
+             *     success(加速度对象): 获取成功之后的回调函数
+             *     error(错误信息对象): 获取失败之后的回调函数 
+             */
+            plus.accelerometer.getCurrentAcceleration(function(append){
+                /**
+                 * append: 加速度对象
+                 * 三个属相: xAxis, yAxis, zAxis 分别为三个方向的坐标值(范围在 : -10到10之间);
+                 * 屏幕六种状态极端坐标参考
+                 *     正横屏/反横屏     xAxis = 10 / -10
+                 *     正竖屏/反竖屏     yAxis = 10 / -10
+                 *     朝天屏/朝地屏     zAxis = 10 / -10    
+                 */
+                $('#test').html('X轴: ' + append.xAxis + '<br>Y轴: ' + append.yAxis + '<br>Z轴: ' + append.zAxis);
+            }, function(errors){
+                /**
+                 * errors: 错误信息对象
+                 * 一个属性: message 错误的描述
+                 */
+                $('#test').html(errors.message);
+            });
+        } 
+        
+        var appendNumber = 0;
+        function open(){
+            /**
+             * plus.accelerometer.watchAcceleration(success()){}, error(){}, options)
+             *     success(加速度对象): 监听成功之后的回调函数
+             *     error(错误信息对象): 监听失败之后的回调函数 
+             *     options: 监听的设置对象 
+             *         一个属性: frequency 监听频率(毫秒)
+             * 返回值: 监听加速度的唯一标示符(number类型)
+             */
+            appendNumber = plus.accelerometer.watchAcceleration(function(append){
+                $('#test').html('X轴: ' + append.xAxis + '<br>Y轴: ' + append.yAxis + '<br>Z轴: ' + append.zAxis);
+            }, function(append){
+                $('#test').html(append.message);
+            }, {
+                frequency: 1000
+            })
+        }
+        
+        function down(){
+            /**
+             * 关闭监听事件: plus.accelerometer.clearWatch(appendNumber)
+             *     appendNumber: 监听加速度的唯一标示符(number类型)
+             */
+            plus.accelerometer.clearWatch(appendNumber);
+        }
+        
+        $('#gets').on('touchstart', gets);
+        $('#open').on('touchstart', open);
+        $('#down').on('touchstart', down);
+    });
+</script>
+</body>
+
+</html>

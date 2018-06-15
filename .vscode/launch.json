@@ -9,7 +9,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "启动 Chrome 并打开 localhost",
-            "url": "http://localhost:8089",
+            "url": "http://172.31.66.55:8089/",
             "webRoot": "${workspaceFolder}"
         }
     ]
