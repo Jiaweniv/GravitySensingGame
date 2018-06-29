@@ -158,7 +158,7 @@ body, html {
     color: #fff;
     font-size: 1.344rem;
     overflow: hidden;
-    background: #000 url("../img/music.png") center (center / 100%) auto;
+    background:#000 url("../img/music.png") center center / 100% auto;
 }
 
 .gameBox .music.disabled:before {
