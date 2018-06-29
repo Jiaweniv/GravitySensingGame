@@ -9,11 +9,11 @@ Load.prototype = {
     },
     startLoad: function () {
         this.load.crossOrigin = 'anonymous'; // 设置跨域
-        this.load.atlas('atlas', 'jumpGame/img/game.png', 'jumpGame/img/game.json');
-        this.load.image('remind', 'jumpGame/img/remind.png');
-        this.load.audio('bg', 'jumpGame/music/bg.mp3');
-        this.load.audio('jump', 'jumpGame/music/jump.mp3');
-        this.load.audio('spring', 'jumpGame/music/spring.mp3');
+        this.load.atlas('atlas', '../img/game.png', '../img/game.json');
+        this.load.image('remind', '../img/remind.png');
+        this.load.audio('bg', '../music/bg.mp3');
+        this.load.audio('jump', '../music/jump.mp3');
+        this.load.audio('spring', '../music/spring.mp3');
         this.load.start();
     },
     loadStart: function () {
