@@ -1,9 +1,6 @@
 var game = new Phaser.Game(750, 1334, Phaser.CANVAS, "game", null, true);
 var dataTimeNum = index_.$data.gameTime;
 // game.time = dataTimeNum;
-var 
-
-
 var Load = function () {};
 Load.prototype = {
     setScale: function (val) {
