@@ -41,15 +41,15 @@ function winOrientation() {
 
 function loadJS(fun) {
     var a = document.createElement('script');
-    a.src = "../js/phaser.min.js";
+    a.src = "js/phaser.min.js";
     document.head.appendChild(a);
     a.onload = function () {
         var b = document.createElement('script');
-        b.src = "../js/load.js";
+        b.src = "js/load.js";
         document.head.appendChild(b);
         b.onload = function () {
             var c = document.createElement('script');
-            c.src = "../js/game.js";
+            c.src = "js/game.js";
             document.head.appendChild(c);
             c.onload = function () {
                 fun();
