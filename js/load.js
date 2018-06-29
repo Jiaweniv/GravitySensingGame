@@ -1,6 +1,9 @@
 var game = new Phaser.Game(750, 1334, Phaser.CANVAS, "game", null, true);
 var dataTimeNum = index_.$data.gameTime;
 // game.time = dataTimeNum;
+var 
+
+
 var Load = function () {};
 Load.prototype = {
     setScale: function (val) {
@@ -9,11 +12,11 @@ Load.prototype = {
     },
     startLoad: function () {
         this.load.crossOrigin = 'anonymous'; // 设置跨域
-        this.load.atlas('atlas', '../img/game.png', '../img/game.json');
-        this.load.image('remind', '../img/remind.png');
-        this.load.audio('bg', '../music/bg.mp3');
-        this.load.audio('jump', '../music/jump.mp3');
-        this.load.audio('spring', '../music/spring.mp3');
+        this.load.atlas('atlas', 'js/game.png', 'js/game.json');
+        this.load.image('remind', 'js/remind.png');
+        this.load.audio('bg', 'js/bg.mp3');
+        this.load.audio('jump', 'js/jump.mp3');
+        this.load.audio('spring', 'js/spring.mp3');
         this.load.start();
     },
     loadStart: function () {
