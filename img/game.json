@@ -1,0 +1,36 @@
+{"frames": {
+
+"but1":
+{
+	"frame": {"x":0,"y":0,"w":107,"h":210},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":107,"h":210},
+	"sourceSize": {"w":107,"h":210}
+},
+"but2":
+{
+	"frame": {"x":107,"y":0,"w":145,"h":219},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":145,"h":219},
+	"sourceSize": {"w":145,"h":219}
+},
+"yun":
+{
+	"frame": {"x":0,"y":219,"w":235,"h":105},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":235,"h":105},
+	"sourceSize": {"w":235,"h":105}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "game.png",
+	"format": "RGBA8888",
+	"size": {"w":252,"h":324},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:abfef8fc4fbf6fca547fdd240fc32f48:f69d317b66b9ecf1e96b2b7e98d444a6:fc2835210f98bae8e8c1b7f0a84c9321$"
+}
+}

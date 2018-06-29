@@ -1,8 +1,11 @@
+var index_ = new Vue({
+    el: '.wrap',
+    data: {
+        gameTime: 50
+    }
+})
 var isStart = false,
-    music = [],
-        initScreen = function (callback) { //初始化html  font-size
-            document.getElementById("html").style.setProperty("font-size", gameWidth / 375 * 312.5 + "%");
-        };
+    music = [];
 
 function setSize() {
     gameWidth = window.innerWidth > 750 ? 750 : window.innerWidth;
@@ -67,11 +70,9 @@ function ranArr(a, b) {
 };
 window.onload = function () {
     setSize();
-    initScreen();
     winOrientation();
 };
 window.onresize = function () {
     setSize();
-    initScreen();
     winOrientation();
 };

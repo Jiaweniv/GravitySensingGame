@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+.wrap, a {
+    -webkit-touch-callout: none;
+}
+
+.wrap, body {
+    -webkit-user-select: none;
+    -webkit-text-size-adjust: none;
+}
+
+article, aside, blockquote, body, button, code, dd, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, input, legend, li, menu, nav, ol, p, pre, section, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    line-height: 1.5;
+    color: #000;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    outline: 0;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+li {
+    list-style: none;
+}
+
+input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+    border: none;
+    background: 0 0;
+    -webkit-appearance: none;
+    outline: 0;
+}
+
+::-webkit-input-placeholder {
+    color: #777;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.content {
+    position: relative;
+    top: -51px;
+    left: -51px;
+    width: 600px;
+    z-index: 2;
+    height: 300px;
+    overflow: hidden;
+}
+
+.img {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+.info {
+    text-align: center;
+}
+
+.wrap {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    background-color: #22522A;
+    overflow: hidden;
+    height: 100%;
+}
+
+#game {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: url(../img/gameBg.png) no-repeat;
+    background-size: cover;
+}
+
+.gameBox {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.gameBox .score {
+    position: absolute;
+    z-index: 100;
+    top: .384rem;
+    left: .384rem;
+    width: 1.984rem;
+    height: 1.984rem;
+    line-height: 1.952rem;
+    border: .064rem solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: .576rem;
+    color: #fff;
+    background-color: #000;
+}
+
+.gameBox .countdown {
+    position: absolute;
+    z-index: 100;
+    top: .384rem;
+    left: 3.776rem;
+    width: 4.448rem;
+    height: 1.984rem;
+    line-height: 1.92rem;
+    border: .064rem solid #da4934;
+    border-radius: 1.024rem;
+    font-size: .96rem;
+    text-align: center;
+    color: #da4934;
+    background-color: #000;
+}
+
+.gameBox .music {
+    position: absolute;
+    z-index: 100;
+    top: .384rem;
+    right: .384rem;
+    width: 1.984rem;
+    height: 1.984rem;
+    line-height: .992rem;
+    border: .064rem solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    font-size: 1.344rem;
+    overflow: hidden;
+    background: #000 url("../img/music.png") center center / 100% auto;
+}
+
+.gameBox .music.disabled:before {
+    content: '';
+    display: inline-block;
+    width: 1.984rem;
+    height: .064rem;
+    -weblit-transform: rotateZ(45deg) scale(1.4);
+    -webkit-transform: rotateZ(45deg) scale(1.4);
+    transform: rotateZ(45deg) scale(1.4);
+    background: #fff;
+}
+
+#forhorview {
+    position: absolute;
+    font-size: 0.5rem;
+    text-align: center;
+    line-height: 100%;
+    color: #6c6f3a;
+    background: #edffd9;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
